@@ -1,14 +1,13 @@
 
-import './App.css'
-import { Button } from "flowbite-react";
+
+import Hero from './components/hero';
 
 function App() {
  
 
   return (
   <div >
-<h1 className="text-3xl  font-bold underline text-red-500">Hello World</h1>
-      <Button>Click me</Button>
+<Hero />
   </div>
   )
 }
