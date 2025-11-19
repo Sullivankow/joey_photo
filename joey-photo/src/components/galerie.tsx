@@ -21,7 +21,7 @@ const MasonryGrid: React.FC = () => {
         {/* En-tête : titre, description et action */}
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
-            <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Gallery</h2>
+            <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">G a l l e r y</h2>
             <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
               DES MOMENTS DONT VOUS VOUS SOUVENIREZ
             </p>
