@@ -1,14 +1,12 @@
-
-
-import Hero from './components/hero';
+import Hero from './components/hero'
+import Galerie from './components/galerie'
 
 function App() {
- 
-
   return (
-  <div >
-<Hero />
-  </div>
+    <>
+      <Hero />
+      <Galerie />
+    </>
   )
 }
 
