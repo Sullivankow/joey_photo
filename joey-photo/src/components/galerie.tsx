@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 // Images locales utilisées par la galerie (placer les fichiers dans `public/`)
-const basePhotos = ['/animal1.jpg', '/animal2.jpg', '/boudoir%20.jpg']
+const basePhotos = ['/animal1.jpg', '/animal2.jpg', '/boudoir.jpg']
 
 // Répéter chaque image 3 fois pour obtenir plus de vignettes
 const photos = basePhotos.flatMap((p) => new Array(3).fill(p))
@@ -14,8 +14,45 @@ const spans = [3, 2, 4, 2, 3, 2, 3, 2, 4]
  * Composant simple affichant une grille de vignettes en style masonry.
  */
 const MasonryGrid: React.FC = () => {
+  const containerRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    // Respecter la préférence reduce-motion
+    const mq = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)')
+    if (mq?.matches) {
+      // rendre visibles immédiatement
+      container.querySelectorAll('figure').forEach((el) => {
+        el.classList.remove('opacity-0', 'translate-y-16', 'scale-95')
+        el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+      })
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLElement
+          if (entry.isIntersecting) {
+            el.classList.remove('opacity-0', 'translate-y-16', 'scale-95')
+            el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+            obs.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+
+    const items = container.querySelectorAll('figure')
+    items.forEach((it) => observer.observe(it))
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <main className="bg-white dark:bg-[#1B1B1B] h-full py-6 sm:py-8 lg:py-12">
+    <main ref={containerRef} className="bg-white dark:bg-[#1B1B1B] h-full py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 
         {/* En-tête : titre, description et action */}
@@ -41,8 +78,8 @@ const MasonryGrid: React.FC = () => {
           {photos.map((src, i) => (
             <figure
               key={`${i}-${src}`}
-              style={{ gridRowEnd: `span ${spans[i % spans.length] || 2}` }}
-              className="overflow-hidden rounded-lg"
+              style={{ gridRowEnd: `span ${spans[i % spans.length] || 2}`, transitionDelay: `${i * 100}ms` }}
+              className="overflow-hidden rounded-lg opacity-0 translate-y-16 scale-95 transition-transform transition-opacity duration-1000 ease-out"
             >
               <img src={src} alt={`Galerie ${i + 1}`} loading="lazy" className="w-full h-full object-cover block" />
             </figure>

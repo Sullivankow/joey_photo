@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'A c c u e i l', href: '#' },
-  { name: 'À p r o p o s', href: '#' },
+  { name: 'À  p r o p o s', href: '#' },
   { name: 'S e r v i c e s', href: '#' },
   { name: 'P o r t f o l i o', href: '#' },
   { name: 'C o n t a c t', href: '#' },
@@ -17,7 +17,7 @@ const navigation = [
 const photos = [
   '/animal1.jpg',
   '/animal2.jpg',
-  encodeURI('/boudoir .jpg'),
+  '/boudoir.jpg',
 ]
 
 export default function Hero() {
