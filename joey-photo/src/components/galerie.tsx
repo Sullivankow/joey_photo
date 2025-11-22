@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 
 // Images locales utilisées par la galerie (placer les fichiers dans `public/`)
-const basePhotos = ['/animal1.jpg', '/animal2.jpg', '/boudoir.jpg']
+const basePhotos = [
+  { src: '/animal1.jpg', title: 'Nature' },
+  { src: '/animal2.jpg', title: 'Portrait' },
+  { src: '/boudoir.jpg', title: 'Mariage' },
+]
 
-// Répéter chaque image 3 fois pour obtenir plus de vignettes
+// Répéter chaque image 3 fois pour obtenir plus de vignettes (chaque entrée garde sa catégorie)
 const photos = basePhotos.flatMap((p) => new Array(3).fill(p))
 
 // Pattern de "spans" pour varier la hauteur des tuiles (masonry)
@@ -24,29 +28,29 @@ const MasonryGrid: React.FC = () => {
     const mq = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)')
     if (mq?.matches) {
       // rendre visibles immédiatement
-      container.querySelectorAll('figure').forEach((el) => {
+      for (const el of Array.from(container.querySelectorAll('figure'))) {
         el.classList.remove('opacity-0', 'translate-y-16', 'scale-95')
         el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
-      })
+      }
       return
     }
 
     const observer = new IntersectionObserver(
       (entries, obs) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           const el = entry.target as HTMLElement
           if (entry.isIntersecting) {
             el.classList.remove('opacity-0', 'translate-y-16', 'scale-95')
             el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
             obs.unobserve(entry.target)
           }
-        })
+        }
       },
       { threshold: 0.15 }
     )
 
     const items = container.querySelectorAll('figure')
-    items.forEach((it) => observer.observe(it))
+    for (const it of Array.from(items)) observer.observe(it)
 
     return () => observer.disconnect()
   }, [])
@@ -75,15 +79,33 @@ const MasonryGrid: React.FC = () => {
 
         {/* Grille masonry : grid + auto-rows + spans */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[12rem]">
-          {photos.map((src, i) => (
-            <figure
-              key={`${i}-${src}`}
-              style={{ gridRowEnd: `span ${spans[i % spans.length] || 2}`, transitionDelay: `${i * 100}ms` }}
-              className="overflow-hidden rounded-lg opacity-0 translate-y-16 scale-95 transition-transform transition-opacity duration-1000 ease-out"
-            >
-              <img src={src} alt={`Galerie ${i + 1}`} loading="lazy" className="w-full h-full object-cover block" />
-            </figure>
-          ))}
+          {photos.map((item, i) => {
+            const { src, title } = item
+            return (
+              <figure
+                key={`${i}-${src}`}
+                style={{ gridRowEnd: `span ${spans[i % spans.length] || 2}`, transitionDelay: `${i * 100}ms` }}
+                className="group relative overflow-hidden rounded-lg opacity-0 translate-y-16 scale-95 transition-transform transition-opacity duration-1000 ease-out"
+              >
+                <img
+                  src={src}
+                  alt={`${title} ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover block transform-gpu transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+
+                {/* Overlay sombre couvrant toute la vignette ; s'intensifie au hover */}
+                <div className="absolute inset-0 bg-black/50 transition-colors duration-300 group-hover:bg-black/60" />
+
+                {/* Titre centré ; léger effet au hover */}
+                <figcaption className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+                  <div className="text-center transform transition-transform duration-700 group-hover:scale-105">
+                    <span className="text-lg md:text-xl font-semibold text-white tracking-wide">{title}</span>
+                  </div>
+                </figcaption>
+              </figure>
+            )
+          })}
         </div>
       </div>
     </main>
