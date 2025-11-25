@@ -55,7 +55,7 @@ export default function Hero() {
             {/* Menu centré sur desktop */}
             <div className="hidden lg:flex items-center gap-6">
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-sm font-semibold text-white/90 hover:text-white px-2">
+                <a key={item.name} href={item.href} className="text-sm font-semibold text-white/90 hover:text-[#D4C09E] px-2">
                   {item.name}
                 </a>
               ))}
@@ -83,7 +83,13 @@ export default function Hero() {
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">Capturing light & emotion</h1>
             <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe professionnel — portraits, mariages, éditorial.</p>
             <div className="flex gap-4">
-              <a href="#portfolio" className="rounded-md bg-black px-5 py-3 text-sm font-semibold text-white shadow transition-colors duration-150 hover:bg-[#D4C09E] hover:text-white">Voir le portfolio</a>
+              <button
+                type="button"
+                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-md bg-black px-5 py-3 text-sm font-semibold text-white shadow transition-colors duration-150 hover:bg-[#D4C09E] hover:text-white"
+              >
+                Voir le portfolio
+              </button>
               <a href="#contact" className="rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">Contact</a>
             </div>
           </div>

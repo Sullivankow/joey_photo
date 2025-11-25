@@ -56,22 +56,22 @@ const MasonryGrid: React.FC = () => {
   }, [])
 
   return (
-    <main ref={containerRef} className="bg-white dark:bg-[#1B1B1B] h-full py-6 sm:py-8 lg:py-12">
+    <main ref={containerRef} className="bg-white  h-full py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 
         {/* En-tête : titre, description et action */}
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
-            <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white"> G a l l e r i e s</h2>
-            <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
-              DES MOMENTS DONT VOUS VOUS SOUVENIREZ
+            <h2 className="text-2xl font-bold  lg:text-3xl text-[#213547]"> G a l l e r i e s</h2>
+            <p className="hidden max-w-screen-sm text-[#D4C09E]  md:block">
+              Des moments dont vous vous souviendrez toute votre vie, capturés avec passion et authenticité.
             </p>
           </div>
 
           {/* Bouton d'action (accessible) */}
           <button
             type="button"
-            className="inline-block rounded-lg border bg-white dark:bg-gray-700 px-4 py-2 text-sm font-semibold text-gray-500 dark:text-gray-200 transition hover:bg-gray-100 active:bg-gray-200 md:px-8 md:py-3 md:text-base"
+            className="inline-block rounded-lg border bg-white dark:bg-black px-4 py-2 text-sm font-semibold text-gray-500 dark:text-gray-200 transition hover:bg-[#D4C09E] active:bg-gray-200 md:px-8 md:py-3 md:text-base"
           >
             Voir tout
           </button>
