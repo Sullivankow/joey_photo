@@ -1,8 +1,9 @@
-'use client'
+ 'use client'
 
 import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import logo from '../assets/images/logo.png'
 
 
 const navigation = [
@@ -52,6 +53,13 @@ export default function Hero() {
       <header className="absolute inset-x-0 top-0 z-50">
         <div className="max-w-7xl mx-auto">
           <nav aria-label="Global" className="flex items-center justify-center p-4 lg:p-6 relative">
+            {/* Logo en haut à gauche sur desktop */}
+            <div className="absolute left-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
+              <a href="/" aria-label="Accueil">
+                <img src={logo} alt="Logo" className="h-24 md:h-32 w-auto" />
+              </a>
+            </div>
+
             {/* Menu centré sur desktop */}
             <div className="hidden lg:flex items-center gap-6">
               {navigation.map((item) => (
@@ -127,7 +135,9 @@ export default function Hero() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black/90 p-6 sm:max-w-sm">
           <div className="flex items-center justify-between">
-            <div />
+            <a href="/" className="inline-block lg:hidden">
+              <img src={logo} alt="Logo" className="h-16 w-auto" />
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
