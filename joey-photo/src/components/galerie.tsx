@@ -63,7 +63,7 @@ const MasonryGrid: React.FC = () => {
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
             <h2 className="text-2xl font-bold  lg:text-3xl text-[#213547]"> G a l l e r i e s</h2>
-            <p className="hidden max-w-screen-sm text-[#D4C09E]  md:block">
+            <p className="hidden mt-6 text-lg italic max-w-screen-sm text-[#D4C09E]  md:block">
               Des moments dont vous vous souviendrez toute votre vie, capturés avec passion et authenticité.
             </p>
           </div>

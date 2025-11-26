@@ -6,7 +6,7 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">S e r v i c e s</h2>
-          <p className="mt-4 text-[#D4C09E] max-w-2xl mx-auto">Prestations professionnelles de photographie — mariage, portrait, éditorial. Chaque séance est personnalisée pour raconter votre histoire.</p>
+          <p className="mt-6 text-lg italic text-[#D4C09E] max-w-2xl mx-auto">Prestations professionnelles de photographie — mariage, portrait, éditorial. Chaque séance est personnalisée pour raconter votre histoire.</p>
         </header>
 
         <div className="grid gap-8 sm:grid-cols-3">

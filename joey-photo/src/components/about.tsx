@@ -44,7 +44,7 @@ export default function About() {
               <p className="mt-2 text-4xl font-semibold tracking-tight text-[#213547] sm:text-5xl">
                 Capturer votre histoire avec sensibilité
               </p>
-              <p className="mt-6 text-lg text-gray-600 italic">
+              <p className="mt-6 text-lg text-[#D4C09E] italic">
                 Joey saisit les instants qui durent : une lumière qui caresse, un geste qui se prolonge, une émotion
                 qui se révèle. Son approche mêle technique et intuition pour créer des images qui respirent et traversent
                 le temps.
