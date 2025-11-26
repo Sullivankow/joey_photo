@@ -1,6 +1,6 @@
  'use client'
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/images/logo.png'
@@ -53,19 +53,19 @@ export default function Hero() {
       <header className="absolute inset-x-0 top-0 z-50">
         <div className="max-w-7xl mx-auto">
           <nav aria-label="Global" className="flex items-center justify-center p-4 lg:p-6 relative">
-            {/* Logo en haut à gauche sur desktop */}
-            <div className="absolute left-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
-              <a href="/" aria-label="Accueil">
-                <img src={logo} alt="Logo" className="h-24 md:h-32 w-auto" />
-              </a>
-            </div>
-
-            {/* Menu centré sur desktop */}
+            {/* Menu centré sur desktop, logo inséré entre 'Services' et 'Portfolio' */}
             <div className="hidden lg:flex items-center gap-6">
-              {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-sm font-semibold text-white/90 hover:text-[#D4C09E] px-2">
-                  {item.name}
-                </a>
+              {navigation.map((item, idx) => (
+                <React.Fragment key={item.name}>
+                  <a href={item.href} className="text-sm font-semibold text-white/90 hover:text-[#D4C09E] px-4 md:px-6">
+                    {item.name}
+                  </a>
+                  {idx === 2 && (
+                    <a href="/" aria-label="Accueil" className="flex items-center px-2">
+                      <img src={logo} alt="Logo" className="h-12 md:h-30 w-auto" />
+                    </a>
+                  )}
+                </React.Fragment>
               ))}
             </div>
 
