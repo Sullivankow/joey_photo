@@ -9,10 +9,11 @@ import logo from '../assets/images/logo.png'
 const navigation = [
   { name: 'A c c u e i l', href: '#' },
   { name: 'À  p r o p o s', href: '#' },
+  { name: 'G a l l e r i e', href: '#' },
   { name: 'S e r v i c e s', href: '#' },
-  { name: 'P o r t f o l i o', href: '#' },
+  { name: 'A v i s', href: '#' },
   { name: 'C o n t a c t', href: '#' },
-  { name: 'F A Q', href: '#' },
+  
 ]
 
 const photos = [
