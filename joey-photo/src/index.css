@@ -1,16 +1,17 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 
 :root {
 
 /* variables de polices et fallback */
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  /* corps et titres (titres en italique allongé) */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
 
-
-  font-family: var(--font-sans);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  line-height: 1.6;
   font-weight: 400;
 
   /* Page background and default text color: force white background */
@@ -42,14 +43,21 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  /* Utiliser la police serif fournie par Tailwind via @apply */
-  @apply font-serif;
+  font-family: var(--font-body);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Titres avec italiques allongés pour un style ancien et élégant */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: #213547;
+  margin: 0 0 0.4em 0;
+  letter-spacing: -0.01em;
 }
+
+h1 { font-size: 3rem; line-height: 1.05; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
 
 button {
   border-radius: 8px;

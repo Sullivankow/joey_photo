@@ -80,17 +80,28 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen">
         <div className="max-w-7xl mx-auto w-full flex items-center">
           <div className="w-full lg:w-1/2 p-8 lg:p-20 text-white">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">Capturing light & emotion</h1>
+            <h1 style={{ color: '#fff' }} className="text-4xl lg:text-6xl font-bold leading-tight mb-4 text-white">Capturer la lumière et l'émotion</h1>
             <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe professionnel — portraits, mariages, éditorial.</p>
             <div className="flex gap-4">
               <button
                 type="button"
                 onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-md bg-black px-5 py-3 text-sm font-semibold text-white shadow transition-colors duration-150 hover:bg-[#D4C09E] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black shadow transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
               >
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                  <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
                 Voir le portfolio
               </button>
-              <a href="#contact" className="rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">Contact</a>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                  <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 18.5 6h-13A2.5 2.5 0 0 0 3 8.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M21 8.5l-9 6-9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Contact
+              </a>
             </div>
           </div>
 

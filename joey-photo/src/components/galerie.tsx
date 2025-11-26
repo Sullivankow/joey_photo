@@ -11,7 +11,7 @@ const basePhotos = [
 const photos = basePhotos.flatMap((p) => new Array(3).fill(p))
 
 // Pattern de "spans" pour varier la hauteur des tuiles (masonry)
-const spans = [3, 2, 4, 2, 3, 2, 3, 2, 4]
+const spans = [3, 2, 4, 2, 3, 2, 3, 2, 1]
 
 /**
  * MasonryGrid
@@ -71,8 +71,13 @@ const MasonryGrid: React.FC = () => {
           {/* Bouton d'action (accessible) */}
           <button
             type="button"
-            className="inline-block rounded-lg border bg-white dark:bg-black px-4 py-2 text-sm font-semibold text-gray-500 dark:text-gray-200 transition hover:bg-[#D4C09E] active:bg-gray-200 md:px-8 md:py-3 md:text-base"
+            className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
           >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+              <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             Voir tout
           </button>
         </div>
