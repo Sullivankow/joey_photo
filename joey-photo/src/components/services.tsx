@@ -74,7 +74,7 @@ const Services: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10">
           <h2 className="text-4xl font-playfair italic text-[#213547]">Liste des services</h2>
-          <p className="mt-4 text-sm text-[#7b6b63]">Photographie — une passion avant tout</p>
+          <p className="mt-6 text-lg text-[#D4C09E] italic">Photographie — une passion avant tout</p>
         </header>
 
         <div className="space-y-10" ref={containerRef}>
