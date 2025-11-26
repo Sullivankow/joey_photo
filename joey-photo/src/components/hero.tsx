@@ -120,13 +120,27 @@ export default function Hero() {
 
       {/* Contrôles du carrousel (précédent / suivant) */}
       <div className="absolute inset-y-0 left-0 flex items-center z-20">
-        <button onClick={prev} className="m-4 p-2 rounded-full bg-black/40 text-white/90 hover:bg-black/60">
-          ‹
+        <button
+          onClick={prev}
+          aria-label="Précédent"
+          title="Précédent"
+          className="m-4 p-3 md:p-4 rounded-full bg-white/10 text-white hover:bg-white/20 shadow-lg backdrop-blur-sm transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center z-20">
-        <button onClick={next} className="m-4 p-2 rounded-full bg-black/40 text-white/90 hover:bg-black/60">
-          ›
+        <button
+          onClick={next}
+          aria-label="Suivant"
+          title="Suivant"
+          className="m-4 p-3 md:p-4 rounded-full bg-white/10 text-white hover:bg-white/20 shadow-lg backdrop-blur-sm transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
       </div>
 
