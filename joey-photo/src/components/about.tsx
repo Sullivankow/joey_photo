@@ -40,7 +40,7 @@ export default function About() {
               }`}
               style={{ transitionDelay: '80ms' }}
             >
-              <h2 className="text-base font-semibold text-[#D4C09E]">Joey — Photographe</h2>
+              <h2 className="text-base font-semibold text-[#D4C09E]">Grassy — Photographie</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-[#213547] sm:text-5xl">
                 Capturer votre histoire avec sensibilité
               </p>
