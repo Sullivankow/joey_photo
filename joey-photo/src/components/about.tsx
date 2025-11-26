@@ -1,5 +1,7 @@
 
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { useRef } from 'react'
+import useInView from '../hooks/useInView'
 
 const features = [
   {
@@ -21,12 +23,23 @@ const features = [
 ]
 
 export default function About() {
+  const textRef = useRef<HTMLDivElement | null>(null)
+  const imgRef = useRef<HTMLImageElement | null>(null)
+  const textInView = useInView(textRef)
+  const imgInView = useInView(imgRef)
+
   return (
     <section className="overflow-hidden bg-white py-24 sm:py-32" id="about">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
-            <div className="lg:max-w-lg">
+            <div
+              ref={textRef}
+              className={`lg:max-w-lg transition-transform transition-opacity duration-1000 ease-out ${
+                textInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
+              }`}
+              style={{ transitionDelay: '80ms' }}
+            >
               <h2 className="text-base font-semibold text-[#D4C09E]">Joey — Photographe</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-[#213547] sm:text-5xl">
                 Capturer votre histoire avec sensibilité
@@ -77,12 +90,17 @@ export default function About() {
             </div>
           </div>
 
+          {/* Image animée (slide-up similaire à la galerie) */}
           <img
+            ref={imgRef}
             alt="Joey portrait"
             src="/joey.jpeg"
             width={1216}
             height={712}
-            className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0"
+            style={{ transitionDelay: '180ms' }}
+            className={`w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0 transition-transform transition-opacity duration-1000 ease-out ${
+              imgInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
+            }`}
           />
         </div>
       </div>
