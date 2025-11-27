@@ -102,12 +102,16 @@ export default function ContactForm() {
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-4">
-           
-
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#BFA776] active:bg-[#A98F63]"
+              aria-label="Envoyer le message"
+              className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
             >
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               Envoyer
             </button>
           </div>

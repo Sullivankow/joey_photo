@@ -18,9 +18,10 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h4 style={{color: '#ffffff'}} className="text-lg font-semibold">Liens</h4>
             <ul className="mt-3 space-y-2 text-sm text-[#d6cdbf]">
+              <li><a className="hover:text-[#D4C09E]" href="#hero">Accueil</a></li>
               <li><a className="hover:text-[#D4C09E]" href="#about">À propos</a></li>
               <li><a className="hover:text-[#D4C09E]" href="#services">Prestations</a></li>
-              <li><a className="hover:text-[#D4C09E]" href="#galerie">Galerie</a></li>
+              <li><a className="hover:text-[#D4C09E]" href="#galleries">Galerie</a></li>
               <li><a className="hover:text-[#D4C09E]" href="#contact">Contact</a></li>
               <li><a className="hover:text-[#D4C09E]" href="/mentions-legales">Mentions légales</a></li>
               <li><a className="hover:text-[#D4C09E]" href="/confidentialite">Politique de confidentialité</a></li>
@@ -46,7 +47,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-6 text-sm text-[#d6cdbf] md:text-right">
-              <div>© {new Date().getFullYear()} Joey — Tous droits réservés.</div>
+              <div>© {new Date().getFullYear()} Grassy Photographie — Tous droits réservés.</div>
               <div className="mt-1">Site conçu par SunDev — Tous droits de reproduction réservés.</div>
             </div>
           </div>

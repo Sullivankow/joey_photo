@@ -8,11 +8,11 @@ import logo from '../assets/images/logo.png'
 
 const navigation = [
   { name: 'A c c u e i l', href: '#' },
-  { name: 'À  p r o p o s', href: '#' },
-  { name: 'G a l l e r i e', href: '#' },
-  { name: 'S e r v i c e s', href: '#' },
-  { name: 'A v i s', href: '#' },
-  { name: 'C o n t a c t', href: '#' },
+  { name: 'À  p r o p o s', href: '#about' },
+  { name: 'G a l l e r i e', href: '#galleries' },
+  { name: 'S e r v i c e s', href: '#services' },
+  { name: 'A v i s', href: '#avis' },
+  { name: 'C o n t a c t', href: '#contact' },
   
 ]
 
@@ -35,7 +35,7 @@ export default function Hero() {
   const next = () => setIndex((i) => (i + 1) % photos.length)
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div id="hero" className="relative min-h-screen overflow-hidden">
       {/* Images d'arrière-plan (carrousel) */}
       <div className="absolute inset-0">
         {photos.map((p, i) => (
@@ -92,10 +92,10 @@ export default function Hero() {
             <h1 style={{ color: '#fff' }} className="text-4xl lg:text-6xl font-bold leading-tight mb-4 text-white">Capturer la lumière et l'émotion</h1>
             <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe professionnel — portraits, mariages, éditorial.</p>
             <div className="flex gap-4">
-              <button
-                type="button"
-                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black shadow transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
+              <a
+                href="#portfolio"
+                className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
+                aria-label="Voir le portfolio"
               >
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                   <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -103,7 +103,7 @@ export default function Hero() {
                   <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Voir le portfolio
-              </button>
+              </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                   <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 18.5 6h-13A2.5 2.5 0 0 0 3 8.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

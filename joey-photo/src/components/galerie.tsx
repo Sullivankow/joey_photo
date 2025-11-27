@@ -56,7 +56,7 @@ const MasonryGrid: React.FC = () => {
   }, [])
 
   return (
-    <main ref={containerRef} className="bg-white  h-full py-6 sm:py-8 lg:py-12">
+    <main id="galleries" ref={containerRef} className="bg-white  h-full py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 
         {/* En-tête : titre, description et action */}
@@ -69,9 +69,10 @@ const MasonryGrid: React.FC = () => {
           </div>
 
           {/* Bouton d'action (accessible) */}
-          <button
-            type="button"
-            className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
+          <a
+            href="#portfolio"
+            aria-label="Voir le portfolio"
+            className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
           >
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
               <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -79,7 +80,7 @@ const MasonryGrid: React.FC = () => {
               <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Voir tout
-          </button>
+          </a>
         </div>
 
         {/* Grille masonry : grid + auto-rows + spans */}

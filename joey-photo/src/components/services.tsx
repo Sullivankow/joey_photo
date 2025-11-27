@@ -105,22 +105,15 @@ const Services: React.FC = () => {
             </article>
           ))}
 
-          <aside
-            data-animate
-            style={{ transitionDelay: `${sections.length * 100}ms` }}
-            className="rounded-md bg-white p-6 border border-slate-200 opacity-0 translate-y-16 scale-95 transition-transform transition-opacity duration-1000 ease-out"
-          >
-            <h4 className="text-lg font-semibold text-[#213547]">Contact</h4>
-            <div className="mt-3 space-y-2 text-sm text-gray-700">
-              <div><strong>Téléphone :</strong> 06 99 36 31 43</div>
-              <div><strong>Email :</strong> grassyphotographie@gmail.com</div>
-              <div><strong>Instagram :</strong> @grassyphotographie</div>
-            </div>
+         
+            
+            
 
             <div className="mt-6 text-center">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
+              <a
+                href="#contact"
+                aria-label="Aller au formulaire de contact"
+                className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
               >
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                   <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -128,9 +121,9 @@ const Services: React.FC = () => {
                   <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Réserver
-              </button>
+              </a>
             </div>
-          </aside>
+          
         </div>
       </div>
     </section>

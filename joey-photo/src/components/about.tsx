@@ -29,7 +29,7 @@ export default function About() {
   const imgInView = useInView(imgRef)
 
   return (
-    <section className="overflow-hidden bg-white py-24 sm:py-32" id="about">
+    <section className="about overflow-hidden bg-white py-24 sm:py-32" id="about">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
@@ -75,9 +75,10 @@ export default function About() {
 
               {/* Bouton placé à la fin du texte */}
               <div className="mt-8">
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
+                <a
+                  href="#contact"
+                  aria-label="Aller au formulaire de contact"
+                  className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
                 >
                   <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                     <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -85,7 +86,7 @@ export default function About() {
                     <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   Prendre rendez-vous
-                </button>
+                </a>
               </div>
             </div>
           </div>
