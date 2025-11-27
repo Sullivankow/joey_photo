@@ -6,8 +6,11 @@ import About from './components/about'
 import Avis from './components/avis'
 import ContactForm from './components/contactForm'
 import Footer from './components/footer'
+import Portfolio from './pages/portfolio'
+import NotFound from './pages/NotFound'
+import { Routes, Route } from 'react-router-dom'
 
-function App() {
+function Home() {
   return (
     <>
       <Hero />
@@ -24,6 +27,16 @@ function App() {
       <Separator />
       <Footer />
     </>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
 

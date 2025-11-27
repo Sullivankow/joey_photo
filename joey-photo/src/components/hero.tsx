@@ -1,6 +1,7 @@
  'use client'
 
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/images/logo.png'
@@ -92,8 +93,8 @@ export default function Hero() {
             <h1 style={{ color: '#fff' }} className="text-4xl lg:text-6xl font-bold leading-tight mb-4 text-white">Capturer la lumière et l'émotion</h1>
             <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe professionnel — portraits, mariages, éditorial.</p>
             <div className="flex gap-4">
-              <a
-                href="#portfolio"
+              <Link
+                to="/portfolio"
                 className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white shadow transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
                 aria-label="Voir le portfolio"
               >
@@ -103,7 +104,7 @@ export default function Hero() {
                   <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Voir le portfolio
-              </a>
+              </Link>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                   <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 18.5 6h-13A2.5 2.5 0 0 0 3 8.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
