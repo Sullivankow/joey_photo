@@ -42,7 +42,7 @@ const Services: React.FC = () => {
 
     const mq = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)')
     if (mq?.matches) {
-      for (const el of Array.from(container.querySelectorAll('[data-animate]') as NodeListOf<HTMLElement>)) {
+      for (const el of Array.from(container.querySelectorAll<HTMLElement>('[data-animate]'))) {
         el.classList.remove('opacity-0', 'translate-y-16', 'scale-95')
         el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
       }
