@@ -73,7 +73,7 @@ const Services: React.FC = () => {
     <section className="bg-white py-16" id="services">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10">
-          <h2 className="text-4xl font-playfair italic text-[#213547]">Liste des services</h2>
+          <h2 className="text-4xl font-playfair italic text-[#213547]">S e r v i c e s</h2>
           <p className="mt-6 text-lg text-[#D4C09E] italic">Photographie — une passion avant tout</p>
         </header>
 

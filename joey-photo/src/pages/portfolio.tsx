@@ -1,4 +1,5 @@
 import Footer from '../components/footer'
+import { useNavigate } from 'react-router-dom'
 
 const images = [
   { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1080', alt: 'Nature 1' },
@@ -16,11 +17,21 @@ const images = [
 ]
 
 export default function Portfolio() {
+  const navigate = useNavigate()
+
+  function goToContact() {
+    // navigate to home then scroll to contact section
+    navigate('/')
+    setTimeout(() => {
+      const el = document.getElementById('contact')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 120)
+  }
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <header className="pt-12 pb-8 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-playfair font-semibold text-gray-900 mb-3">Portfolio</h2>
+          <h2 className="text-3xl md:text-4xl font-playfair font-semibold text-gray-900 mb-3"> P o r t f o l i o</h2>
           <p className="mt-6 text-lg text-[#D4C09E] italic max-w-2xl mx-auto">Sélection de projets et séries photographiques — portraits, paysages et reportages. Cliquez sur une image pour l'ouvrir en grand.</p>
             {/* buttons moved after gallery */}
         </div>
@@ -45,9 +56,9 @@ export default function Portfolio() {
           </div>
 
           <div className="mt-8 flex justify-center gap-4">
-            <a href="/#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#D4C09E] hover:bg-[#BFA776] active:bg-[#A98F63] text-black hover:text-white transition-colors font-medium">
+            <button onClick={goToContact} className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#D4C09E] hover:bg-[#BFA776] active:bg-[#A98F63] text-white hover:text-white transition-colors font-medium">
               Prendre rendez-vous
-            </a>
+            </button>
             <a href="/" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#213547] text-[#D4C09E] hover:bg-[#182832] hover:text-white transition-colors font-medium">
               Retour
             </a>

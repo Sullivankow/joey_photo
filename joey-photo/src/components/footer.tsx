@@ -1,6 +1,22 @@
 
+import { useNavigate } from 'react-router-dom'
 
 export default function Footer() {
+  const navigate = useNavigate()
+
+  function goToSection(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
+    e.preventDefault()
+    if (window.location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 120)
+    } else {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   return (
     <footer className="bg-[#213547] text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 lg:px-8">
@@ -18,11 +34,52 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h4 style={{color: '#ffffff'}} className="text-lg font-semibold">Liens</h4>
             <ul className="mt-3 space-y-2 text-sm text-[#d6cdbf]">
-              <li><a className="hover:text-[#D4C09E]" href="#hero">Accueil</a></li>
-              <li><a className="hover:text-[#D4C09E]" href="#about">À propos</a></li>
-              <li><a className="hover:text-[#D4C09E]" href="#services">Prestations</a></li>
-              <li><a className="hover:text-[#D4C09E]" href="#galleries">Galerie</a></li>
-              <li><a className="hover:text-[#D4C09E]" href="#contact">Contact</a></li>
+              
+              <li>
+                <a
+                  className="hover:text-[#D4C09E]"
+                  href="/#hero"
+                  onClick={(e) => goToSection(e, 'hero')}
+                >
+                  Accueil
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-[#D4C09E]"
+                  href="/#about"
+                  onClick={(e) => goToSection(e, 'about')}
+                >
+                  À propos
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-[#D4C09E]"
+                  href="/#services"
+                  onClick={(e) => goToSection(e, 'services')}
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-[#D4C09E]"
+                  href="/#galleries"
+                  onClick={(e) => goToSection(e, 'galleries')}
+                >
+                  Galerie
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-[#D4C09E]"
+                  href="/#contact"
+                  onClick={(e) => goToSection(e, 'contact')}
+                >
+                  Contact
+                </a>
+              </li>
               <li><a className="hover:text-[#D4C09E]" href="/mentions-legales">Mentions légales</a></li>
               <li><a className="hover:text-[#D4C09E]" href="/confidentialite">Politique de confidentialité</a></li>
             </ul>

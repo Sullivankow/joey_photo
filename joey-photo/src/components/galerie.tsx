@@ -2,16 +2,22 @@ import React, { useEffect, useRef } from 'react'
 
 // Images locales utilisées par la galerie (placer les fichiers dans `public/`)
 const basePhotos = [
-  { src: '/animal1.jpg', title: 'Nature' },
+  { src: '/animal1.jpg', title: 'Animalier' },
+  { src: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1080', title: 'Nature' },
   { src: '/animal2.jpg', title: 'Portrait' },
   { src: '/boudoir.jpg', title: 'Mariage' },
+  { src: 'https://images.unsplash.com/photo-1502754400466-c87ff3039da7?q=80&w=1080', title: 'Évènement' },
+  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1080', title: 'Anniversaire' },
+  { src: 'https://images.unsplash.com/photo-1419133203517-f3b3ed0ba2bb?q=80&w=1080', title: 'Noir er Blanc' },
+  { src: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=1080', title: 'Baptême' },
+  { src: '/boudoir.jpg', title: 'Boudoir' },
 ]
 
-// Répéter chaque image 3 fois pour obtenir plus de vignettes (chaque entrée garde sa catégorie)
-const photos = basePhotos.flatMap((p) => new Array(3).fill(p))
+// Utiliser une entrée unique par thème (pas de doublons)
+const photos = basePhotos
 
 // Pattern de "spans" pour varier la hauteur des tuiles (masonry)
-const spans = [3, 2, 4, 2, 3, 2, 3, 2, 1]
+const spans = [ 2, 3, 2]
 
 /**
  * MasonryGrid
@@ -70,7 +76,7 @@ const MasonryGrid: React.FC = () => {
 
           {/* Bouton d'action (accessible) */}
           <a
-            href="#portfolio"
+            href="/portfolio"
             aria-label="Voir le portfolio"
             className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
           >

@@ -14,7 +14,7 @@ export default function ContactForm() {
     <section id="contact" className="bg-white py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-playfair italic text-[#213547]">Contact</h2>
+          <h2 className="text-3xl md:text-4xl font-playfair italic text-[#213547]">C o n t a c t</h2>
           <p className="mt-6 text-lg italic text-[#D4C09E]">Contactez-moi pour réserver une séance ou poser vos questions</p>
         </header>
 
