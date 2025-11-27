@@ -15,7 +15,7 @@ export default function ContactForm() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-playfair italic text-[#213547]">Contact</h2>
-          <p className="mt-2 text-sm text-[#7b6b63]">Contactez-moi pour réserver une séance ou poser vos questions</p>
+          <p className="mt-6 text-lg italic text-[#D4C09E]">Contactez-moi pour réserver une séance ou poser vos questions</p>
         </header>
 
         <form

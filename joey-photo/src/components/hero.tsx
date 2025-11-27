@@ -1,7 +1,7 @@
  'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Dialog } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/images/logo.png'
 
@@ -120,7 +120,7 @@ export default function Hero() {
       </div>
 
       {/* Contrôles du carrousel (précédent / suivant) */}
-      <div className="absolute inset-y-0 left-0 flex items-center z-20">
+      <div className="absolute inset-y-0 left-0 hidden md:flex items-center z-20">
         <button
           onClick={prev}
           aria-label="Précédent"
@@ -132,7 +132,7 @@ export default function Hero() {
           </svg>
         </button>
       </div>
-      <div className="absolute inset-y-0 right-0 flex items-center z-20">
+      <div className="absolute inset-y-0 right-0 hidden md:flex items-center z-20">
         <button
           onClick={next}
           aria-label="Suivant"
@@ -146,31 +146,56 @@ export default function Hero() {
       </div>
 
       {/* Dialogue du menu mobile */}
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black/90 p-6 sm:max-w-sm">
-          <div className="flex items-center justify-between">
-            <a href="/" className="inline-block lg:hidden">
-              <img src={logo} alt="Logo" className="h-16 w-auto" />
-            </a>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="rounded-md p-2.5 text-white/90"
+        <Transition.Root show={mobileMenuOpen} as={React.Fragment}>
+          <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
+            <Transition.Child
+              as={React.Fragment}
+              enter="transition-opacity duration-200"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity duration-150"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-8 space-y-4">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="block text-white text-lg font-medium">
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+              <div className="fixed inset-0 z-50 bg-black/60" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 z-50 flex">
+              <Transition.Child
+                as={React.Fragment}
+                enter="transform transition duration-300"
+                enterFrom="translate-x-full"
+                enterTo="translate-x-0"
+                leave="transform transition duration-200"
+                leaveFrom="translate-x-0"
+                leaveTo="translate-x-full"
+              >
+                <Dialog.Panel className="relative ml-auto w-full max-w-sm overflow-y-auto bg-black/90 p-6">
+                  <div className="flex items-center justify-between">
+                    <a href="/" className="inline-block lg:hidden">
+                      <img src={logo} alt="Logo" className="h-34 w-auto" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="rounded-md p-2.5 text-white/90"
+                    >
+                      <span className="sr-only">Close menu</span>
+                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    </button>
+                  </div>
+                  <div className="mt-8 space-y-4">
+                    {navigation.map((item) => (
+                      <a key={item.name} href={item.href} className="block text-white text-lg font-medium">
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </Dialog>
+        </Transition.Root>
     </div>
   )
 }
