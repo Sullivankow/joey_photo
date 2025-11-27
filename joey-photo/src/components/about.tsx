@@ -92,17 +92,27 @@ export default function About() {
           </div>
 
           {/* Image animée (slide-up similaire à la galerie) */}
-          <img
+          <div
             ref={imgRef}
-            alt="Joey portrait"
-            src="/joey.jpeg"
-            width={1216}
-            height={712}
             style={{ transitionDelay: '180ms' }}
-            className={`w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0 transition-transform transition-opacity duration-1000 ease-out ${
+            className={`transition-transform transition-opacity duration-1000 ease-out ${
               imgInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
             }`}
-          />
+          >
+            {/* Mobile: smaller, centered */}
+            <img
+              alt="Joey portrait"
+              src="/joey.jpeg"
+              className="block md:hidden w-full max-w-xs mx-auto h-56 object-cover rounded-xl shadow-xl ring-1 ring-black/10"
+            />
+
+            {/* Desktop/tablet: keep original appearance */}
+            <img
+              alt="Joey portrait"
+              src="/joey.jpeg"
+              className="hidden md:block w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0"
+            />
+          </div>
         </div>
       </div>
     </section>
