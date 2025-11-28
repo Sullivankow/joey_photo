@@ -8,6 +8,8 @@ import ContactForm from './components/contactForm'
 import Footer from './components/footer'
 import Portfolio from './pages/portfolio'
 import NotFound from './pages/NotFound'
+import MentionsLegales from './pages/mentionsLegales'
+import Confidentialites from './pages/confidentialites'
 import { Routes, Route } from 'react-router-dom'
 
 function Home() {
@@ -35,6 +37,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/mentions-legales" element={<MentionsLegales />} />
+      <Route path="/confidentialites" element={<Confidentialites />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
