@@ -1,0 +1,36 @@
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# --- Option maintenance (décommenter pour activer) ---
+# Remplacez 123.456.78.90 par votre IP si vous voulez que vous seul puissiez voir le site
+# RewriteCond %{REMOTE_ADDR} !^123\.456\.78\.90$
+# RewriteCond %{REQUEST_URI} !^/maintenance.html$
+# RewriteRule ^.*$ /maintenance.html [R=302,L]
+
+# Sécurité : bloquer l'accès aux fichiers sensibles
+<FilesMatch "^\.(htaccess|env|gitignore)$">
+    Require all denied
+</FilesMatch>
+
+# Empêcher l'accès au dossier vendor (si vous uploadez composer/vendor)
+<IfModule mod_rewrite.c>
+    RewriteRule ^vendor/ - [F,L]
+</IfModule>
+
+# Désactiver l'affichage des répertoires
+Options -Indexes
+
+# SPA rewrite : si le fichier ou dossier existe, servir tel quel.
+# Sinon, réécrire vers index.html EXCEPTÉ send_mail.php (ou d'autres API).
+<IfModule mod_rewrite.c>
+    # Ne pas toucher les fichiers/dossiers existants
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Autoriser l'accès direct à send_mail.php (ne pas réécrire)
+    RewriteRule ^send_mail\.php$ - [L]
+
+    # Réécrire le reste vers index.html (SPA)
+    RewriteRule ^ index.html [L]
+</IfModule>
