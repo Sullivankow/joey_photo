@@ -1,5 +1,6 @@
 
 import { useNavigate } from 'react-router-dom'
+import { CONTACT_PHONE, CONTACT_DISPLAY, CONTACT_EMAIL } from '../config'
 
 export default function Footer() {
   const navigate = useNavigate()
@@ -26,8 +27,14 @@ export default function Footer() {
             <p className="mt-3 text-sm text-[#d6cdbf] max-w-sm">Capturer votre histoire avec sensibilité. Séances sur mesure, confidentialité et retouches professionnelles.</p>
 
             <div className="mt-4 text-sm text-[#d6cdbf]">
-              <div><strong>Téléphone :</strong> <a className="text-[#D4C09E] hover:underline" href="tel:+33699363143">06 99 36 31 43</a></div>
-              <div className="mt-1"><strong>Email :</strong> <a className="text-[#D4C09E] hover:underline" href="mailto:grassyphotographie@gmail.com">grassyphotographie@gmail.com</a></div>
+              <div>
+                <strong>Téléphone :</strong>{' '}
+                <a className="text-[#D4C09E] hover:underline" href={`tel:${CONTACT_PHONE}`}>{CONTACT_DISPLAY}</a>
+              </div>
+              <div className="mt-1">
+                <strong>Email :</strong>{' '}
+                <a className="text-[#D4C09E] hover:underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              </div>
             </div>
           </div>
 
