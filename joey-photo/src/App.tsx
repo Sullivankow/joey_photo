@@ -7,6 +7,7 @@ import Avis from './components/avis'
 import ContactForm from './components/contactForm'
 import Footer from './components/footer'
 import PopUp from './components/popUp'
+import CookiesBanner from './components/cookies'
 import Portfolio from './pages/portfolio'
 import NotFound from './pages/NotFound'
 import MentionsLegales from './pages/mentionsLegales'
@@ -16,6 +17,7 @@ import { Routes, Route } from 'react-router-dom'
 function Home() {
   return (
     <>
+      <CookiesBanner />
       <PopUp phone="+33612345678" />
       <Hero />
       <Separator />
