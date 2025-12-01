@@ -37,7 +37,7 @@ export default function Avis() {
         </header>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((t, i) => (
+          {testimonials.map((t) => (
             <blockquote key={t.name} className="group rounded-xl border border-slate-100 p-6 bg-gray-50 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center gap-1">

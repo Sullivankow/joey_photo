@@ -66,7 +66,7 @@ export default function Footer() {
                   href="/#services"
                   onClick={(e) => goToSection(e, 'services')}
                 >
-                  Services
+                  Tarifs
                 </a>
               </li>
               <li>

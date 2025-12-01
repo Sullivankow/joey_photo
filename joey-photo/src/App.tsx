@@ -13,12 +13,21 @@ import NotFound from './pages/NotFound'
 import MentionsLegales from './pages/mentionsLegales'
 import Confidentialites from './pages/confidentialites'
 import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Joey Grassy — Photographe professionnel'
+    const meta = document.querySelector('meta[name="description"]')
+    if (meta) meta.setAttribute('content', 'Joey Grassy, photographe professionnel spécialisé en portraits, mariages et éditorial. Réservation de séances et portfolio.')
+    const linkCanonical = document.querySelector('link[rel="canonical"]')
+    if (linkCanonical) linkCanonical.setAttribute('href', 'https://votre-domaine.exemple/')
+  }, [])
+
   return (
     <>
       <CookiesBanner />
-      <PopUp phone="+33612345678" />
+      <PopUp />
       <Hero />
       <Separator />
       <About />

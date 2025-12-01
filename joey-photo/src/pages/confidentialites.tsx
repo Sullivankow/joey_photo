@@ -1,8 +1,10 @@
 import Footer from '../components/footer'
+import { useEffect } from 'react'
 
 export default function Confidentialites() {
   return (
     <div id="confidentialites" className="min-h-screen bg-white text-[#213547]">
+      <Meta />
       <main className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-8">
           <h1 className="text-4xl font-playfair italic text-[#213547]">Politique de confidentialité</h1>
@@ -57,4 +59,25 @@ export default function Confidentialites() {
       <Footer />
     </div>
   )
+}
+
+function Meta() {
+  useEffect(() => {
+    document.title = 'Politique de confidentialité — Joey Grassy'
+    let meta = document.querySelector('meta[name="description"]')
+    if (!meta) {
+      meta = document.createElement('meta')
+      meta.setAttribute('name', 'description')
+      document.head.appendChild(meta)
+    }
+    meta.setAttribute('content', 'Politique de confidentialité : comment Joey Grassy collecte et utilise vos données via le formulaire de contact.')
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!link) {
+      link = document.createElement('link')
+      link.setAttribute('rel', 'canonical')
+      document.head.appendChild(link)
+    }
+    link.setAttribute('href', 'https://votre-domaine.exemple/confidentialites')
+  }, [])
+  return null
 }

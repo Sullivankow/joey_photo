@@ -3,14 +3,12 @@ import logo from '../assets/images/logo.png'
 import { CONTACT_PHONE, CONTACT_DISPLAY } from '../config'
 
 type PopUpProps = {
-	readonly phone?: string // numéro ou `tel:+33123456789`
 	readonly title?: string
 	readonly message?: string
 	readonly showOnLoad?: boolean
 }
 
 export default function PopUp({
-	// ignore passed `phone` prop and use central config to ensure consistency
 	title = "Une offre spéciale",
 	message = "Une photo offerte pour chaque séance, profitez-en vite!!!",
 	showOnLoad = true

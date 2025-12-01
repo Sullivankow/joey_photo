@@ -1,4 +1,5 @@
 import Footer from '../components/footer'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const images = [
@@ -29,6 +30,9 @@ export default function Portfolio() {
   }
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      {/* mettre à jour le titre et meta description pour cette page */}
+      {/* useEffect ci‑dessous pour modifier le DOM */}
+      <InnerMeta />
       <header className="pt-12 pb-8 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-playfair font-semibold text-gray-900 mb-3"> P o r t f o l i o</h2>
@@ -70,5 +74,26 @@ export default function Portfolio() {
       <Footer />
     </div>
   )
+}
+
+function InnerMeta() {
+  useEffect(() => {
+    document.title = 'Portfolio — Joey Grassy'
+    let meta = document.querySelector('meta[name="description"]')
+    if (!meta) {
+      meta = document.createElement('meta')
+      meta.setAttribute('name', 'description')
+      document.head.appendChild(meta)
+    }
+    meta.setAttribute('content', 'Portfolio photo de Joey Grassy — portraits, paysages, reportages. Découvrez une sélection de projets.')
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!link) {
+      link = document.createElement('link')
+      link.setAttribute('rel', 'canonical')
+      document.head.appendChild(link)
+    }
+    link.setAttribute('href', 'https://votre-domaine.exemple/portfolio')
+  }, [])
+  return null
 }
 

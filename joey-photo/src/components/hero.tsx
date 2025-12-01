@@ -11,7 +11,7 @@ const navigation = [
   { name: 'A c c u e i l', href: '#' },
   { name: 'À  p r o p o s', href: '#about' },
   { name: 'G a l l e r i e', href: '#galleries' },
-  { name: 'S e r v i c e s', href: '#services' },
+  { name: 'T a r i f s', href: '#services' },
   { name: 'A v i s', href: '#avis' },
   { name: 'C o n t a c t', href: '#contact' },
   

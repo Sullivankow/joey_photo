@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getConsent, setConsent, onConsentChange } from '../lib/consent'
 import type { Consent } from '../lib/consent'
 import { loadScript, removeScript } from '../lib/loadScript'
