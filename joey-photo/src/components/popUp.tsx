@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import logo from '../assets/images/logoj.png'
+import logo from '../assets/images/logo.png'
 import { CONTACT_PHONE, CONTACT_DISPLAY } from '../config'
 
 type PopUpProps = {
