@@ -1,0 +1,68 @@
+export default function Method() {
+  const items = [
+    {
+      title: 'Échange personnalisé',
+      desc: "Un rendez-vous préparatoire pour cerner vos envies, choisir le lieu et définir l'ambiance de la séance.",
+      icon: (
+        <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.99 9.99 0 01-4-.8L3 20l.8-4A9.99 9.99 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Séance guidée & conviviale',
+      desc: "Des consignes claires, une atmosphère détendue : je vous accompagne pour faire ressortir le naturel.",
+      icon: (
+        <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 7v4a1 1 0 001 1h3l3 3v-3h6a1 1 0 001-1V7a4 4 0 00-4-4H7a4 4 0 00-4 4z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Retouches soignées',
+      desc: "Tri professionnel et post-traitement personnalisé pour un rendu fidèle et élégant.",
+      icon: (
+        <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8c-1.657 0-3 1.567-3 3.5S10.343 15 12 15s3-1.567 3-3.5S13.657 8 12 8z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.4 15a7.95 7.95 0 00.6-3c0-4.418-4.03-8-9-8S2 7.582 2 12s4.03 8 9 8c1.02 0 2-.16 2.92-.46" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Galerie privée & livraison',
+      desc: "Envoi d'une galerie privée sécurisée et fichiers haute définition prêts à imprimer.",
+      icon: (
+        <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V5a4 4 0 014-4h0a4 4 0 014 4v2" />
+        </svg>
+      ),
+    },
+  ]
+
+  return (
+    <section aria-labelledby="method-heading" className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h3 id="method-heading" className="text-base font-semibold text-[#D4C09E]">Ma méthode</h3>
+          <p className="mt-2 text-3xl font-semibold text-[#213547]">Une approche humaine et professionnelle</p>
+          <p className="mt-4 text-gray-600">Des échanges préparatoires à la livraison finale, je vous accompagne à chaque étape pour un résultat qui vous ressemble.</p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {items.map((it) => (
+            <div key={it.title} className="flex gap-4 items-start bg-white border rounded-lg p-4 shadow-sm">
+              <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-md bg-[#213547]/5 ring-1 ring-[#213547]/10">
+                {it.icon}
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-[#213547]">{it.title}</h4>
+                <p className="mt-1 text-sm text-gray-600">{it.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,26 +1,10 @@
 
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+
 import { useRef } from 'react'
 import useInView from '../hooks/useInView'
+import Method from './method'
 
-const features = [
-  {
-    name: 'Séances sur-mesure',
-    description:
-      "Chaque séance est pensée pour vous : lieu, lumière et direction artistique adaptés à votre histoire.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: 'Respect & confidentialité',
-    description: "Vos images sont traitées et livrées avec discrétion ; droits et usage clairement définis.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: 'Post-traitement professionnel',
-    description: "Retouches fines incluses, livraison rapide de fichiers haute résolution prêts à imprimer.",
-    icon: ServerIcon,
-  },
-]
+
 
 export default function About() {
   const textRef = useRef<HTMLDivElement | null>(null)
@@ -42,60 +26,47 @@ export default function About() {
             >
               <h2 className="text-base font-semibold text-[#D4C09E]">Grassy — Photographie</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-[#213547] sm:text-5xl">
-                Capturer votre histoire avec sensibilité
-              </p>
-              <p className="mt-6 text-lg text-[#D4C09E] italic">
-                Joey saisit les instants qui durent : une lumière qui caresse, un geste qui se prolonge, une émotion
-                qui se révèle. Son approche mêle technique et intuition pour créer des images qui respirent et traversent
-                le temps.
+                Mon Histoire
               </p>
 
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-[#213547]">Méthode</h3>
-                <ol className="mt-3 list-decimal list-inside text-gray-600 space-y-2">
-                  <li><strong>Échange</strong> — Conversation préalable pour comprendre vos attentes et préparer la séance.</li>
-                  <li><strong>Séance</strong> — Session guidée et détendue, en studio ou en extérieur, axée sur l'authenticité.</li>
-                  <li><strong>Livraison</strong> — Retouches soignées et remise d'une galerie privée de photos haute résolution.</li>
-                </ol>
+              <div className="mt-6 space-y-4 text-[#213547]">
+                <p className="text-lg">
+                  L’idée de <span className="font-semibold">GRASSYPHOTOGRAPHY</span> est née d’un déclic, d’une passion qui s’est construite avec le temps.
+                  Au début, la photo n’était qu’une simple découverte, mais elle est vite devenue une évidence — un moyen d’exprimer ce que les mots
+                  ne peuvent pas toujours dire.
+                </p>
+
+                <p>
+                  Chaque séance, chaque sourire, chaque regard capturé raconte une part de cette histoire. GRASSYPHOTOGRAPHY, c’est plus qu’un nom :
+                  c’est une promesse de fidélité à mes valeurs et à cette flamme qui m’anime depuis le départ.
+                </p>
+
+                <p>
+                  Pour être franc, enfant je n’aimais pas la photo — on me l’a fait découvrir un peu par hasard. Puis petit à petit, à force de pratique,
+                  je m’y suis pris goût et j’ai acheté mon premier appareil. C’est à ce moment-là que la passion s’est révélée, et depuis, elle ne m’a
+                  jamais quitté.
+                </p>
+
+                <p>
+                  Ce que j’aime le plus, c’est raconter des histoires et révéler une version d’eux‑mêmes à mes clients. Beaucoup ont du mal à se voir
+                  tels qu’ils sont ; mon objectif est de capturer leur naturel, leur confiance, et de leur présenter une image dont ils pourront être fiers.
+                </p>
+
+                <p>
+                  Ma philosophie est simple : chaque séance doit être un moment agréable — détendu, sans stress, et authentique. J’apporte à la fois
+                  professionnalisme et bienveillance pour créer des images qui vous ressemblent vraiment.
+                </p>
               </div>
 
-              {/* CTA déplacé à la fin de la section pour meilleur flux visuel */}
-
-              <dl className="mt-10 max-w-xl space-y-8 text-base text-gray-700 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-[#213547]">
-                      <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-[#D4C09E]" />
-                      {feature.name}
-                    </dt>{' '}
-                    <dd className="inline text-gray-600">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
-
-              {/* Bouton placé à la fin du texte */}
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  
-                  href="/history"
-                  aria-label="Mon Histoire"
-                  className=" bouton-about inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-[#213547] border border-[#D4C09E] bg-white hover:bg-[#FAF9F7] transition"
-                >
-                  Mon Histoire
-                </a>
-
-                <a
-                  href="#contact"
-                  aria-label="Aller au formulaire de contact"
-                  className="inline-flex items-center gap-2 rounded-lg border border-transparent bg-[#D4C09E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#BFA776] active:bg-[#A98F63] md:px-8 md:py-3 md:text-base"
-                >
-                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                    <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  Prendre rendez-vous
-                </a>
+              <div className="mt-8">
+                <div className="mt-6 flex gap-3">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#D4C09E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#BFA776] transition"
+                  >
+                    Me contacter
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -111,19 +82,20 @@ export default function About() {
             {/* Mobile: smaller, centered */}
             <img
               alt="Joey portrait"
-              src="/joey.jpeg"
-              className="block md:hidden w-full max-w-xs mx-auto h-56 object-cover rounded-xl shadow-xl ring-1 ring-black/10"
+              src="/djoe3.jpg"
+              className="block md:hidden w-full max-w-xs mx-auto h-54 object-cover rounded-xl shadow-xl ring-1 ring-black/10"
             />
 
             {/* Desktop/tablet: keep original appearance */}
             <img
               alt="Joey portrait"
-              src="/joey.jpeg"
-              className="hidden md:block w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0"
+              src="/djoe3.jpg"
+              className="hidden md:block w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-black/10 sm:w-228 md:-ml-4 lg:-ml-0 md:h-[360px] lg:h-[920px] object-cover"
             />
           </div>
         </div>
-      </div>
+        </div>
+
     </section>
   )
 }
