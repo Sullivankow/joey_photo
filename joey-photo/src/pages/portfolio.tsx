@@ -3,18 +3,18 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1080', alt: 'Nature 1' },
-  { src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1080', alt: 'Nature 2' },
-  { src: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1080', alt: 'Nature 3' },
-  { src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1080', alt: 'Nature 4' },
-  { src: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?q=80&w=1080', alt: 'Nature 5' },
-  { src: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=1080', alt: 'Nature 6' },
-  { src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1080', alt: 'Nature 7' },
-  { src: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1080', alt: 'Nature 8' },
-  { src: 'https://images.unsplash.com/photo-1419133203517-f3b3ed0ba2bb?q=80&w=1080', alt: 'Portrait 1' },
-  { src: 'https://images.unsplash.com/photo-1498855926480-d98e83099315?q=80&w=1080', alt: 'Portrait 2' },
-  { src: 'https://images.unsplash.com/photo-1502754400466-c87ff3039da7?q=80&w=1080', alt: 'Street 1' },
-  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1080', alt: 'Nature 1' },
+  { src: '/pf1.jpg', alt: 'Portrait 1' },
+  { src: '/pf2.jpg', alt: 'Portrait 2' },
+  { src: '/pf3.jpg', alt: 'Portrait 3' },
+  { src: '/pf4.jpg', alt: 'Portrait 4' },
+  { src: '/pf5.jpg', alt: 'Portrait 5' },
+  { src: '/pf6.jpg', alt: 'Portrait 6' },
+  { src: '/pf7.jpg', alt: 'Portrait 7' },
+  { src: '/pf8.jpg', alt: 'Portrait 8' },
+  { src: '/pf9.jpg', alt: 'Portrait 9' },
+  { src: '/pf10.jpg', alt: 'Portrait 10' },
+  { src: '/pf11.jpg', alt: 'Portrait 11' },
+  { src: '/pf12.jpg', alt: 'Portrait 12' },
 ]
 
 export default function Portfolio() {
@@ -46,7 +46,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {images.map((img, i) => (
               <figure key={i} className="group relative overflow-hidden rounded-lg bg-gray-100">
-                <img src={img.src} alt={img.alt} className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src={img.src} alt={img.alt} className="w-full h-80 md:h-96 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <figcaption className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end p-4">
                   <div className="w-full flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-white text-sm bg-black/50 px-2 py-1 rounded">{img.alt}</span>

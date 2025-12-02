@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from 'react'
 // Images locales utilisées par la galerie (placer les fichiers dans `public/`)
 const basePhotos = [
   { src: '/animal1.jpg', title: 'Animalier' },
-  { src: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1080', title: 'Nature' },
-  { src: '/animal2.jpg', title: 'Portrait' },
-  { src: '/boudoir.jpg', title: 'Mariage' },
-  { src: 'https://images.unsplash.com/photo-1502754400466-c87ff3039da7?q=80&w=1080', title: 'Évènement' },
-  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1080', title: 'Anniversaire' },
-  { src: 'https://images.unsplash.com/photo-1419133203517-f3b3ed0ba2bb?q=80&w=1080', title: 'Noir er Blanc' },
-  { src: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=1080', title: 'Baptême' },
+  { src: '/nature.jpg', title: 'Nature' },
+  { src: '/portrait.jpg', title: 'Portrait' },
+  { src: '/mariage.jpg', title: 'Mariage' },
+  { src: '/evenement.jpg', title: 'Évènement' },
+  { src: '/anniversaire.jpg', title: 'Anniversaire' },
+  { src: '/noiretblanc.jpg', title: 'Noir et Blanc' },
+  { src: '/bapteme.jpg', title: 'Baptême' },
   { src: '/boudoir.jpg', title: 'Boudoir' },
 ]
 

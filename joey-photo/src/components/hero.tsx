@@ -18,9 +18,9 @@ const navigation = [
 ]
 
 const photos = [
-  '/animal1.jpg',
+  
   '/animal2.jpg',
-  '/boudoir.jpg',
+  
 ]
 
 export default function Hero() {
