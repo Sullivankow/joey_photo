@@ -74,7 +74,16 @@ export default function About() {
               </dl>
 
               {/* Bouton placé à la fin du texte */}
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  
+                  href="/history"
+                  aria-label="Mon Histoire"
+                  className=" bouton-about inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-[#213547] border border-[#D4C09E] bg-white hover:bg-[#FAF9F7] transition"
+                >
+                  Mon Histoire
+                </a>
+
                 <a
                   href="#contact"
                   aria-label="Aller au formulaire de contact"

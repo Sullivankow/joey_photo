@@ -14,6 +14,7 @@ import MentionsLegales from './pages/mentionsLegales'
 import Confidentialites from './pages/confidentialites'
 import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
+import History from './components/history'
 
 function Home() {
   useEffect(() => {
@@ -52,6 +53,8 @@ function App() {
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/mentions-legales" element={<MentionsLegales />} />
       <Route path="/confidentialites" element={<Confidentialites />} />
+      <Route path="/history" element={<History />} />
+      <Route path="/contact" element={<ContactForm />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
