@@ -14,6 +14,7 @@ import MentionsLegales from './pages/mentionsLegales'
 import Confidentialites from './pages/confidentialites'
 import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
+import Method from './components/method'
 
 
 function Home() {
@@ -32,6 +33,8 @@ function Home() {
       <Hero />
       <Separator />
       <About />
+      <Separator />
+      <Method />
       <Separator />
       <Galerie />
       <Separator />

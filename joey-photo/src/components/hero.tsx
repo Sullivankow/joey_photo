@@ -9,7 +9,7 @@ import logo from '../assets/images/logo.png'
 
 const navigation = [
   { name: 'A c c u e i l', href: '#' },
-  { name: 'À  p r o p o s', href: '#about' },
+  { name: 'H i s t o i r e', href: '#about' },
   { name: 'G a l l e r i e', href: '#galleries' },
   { name: 'T a r i f s', href: '#services' },
   { name: 'A v i s', href: '#avis' },
