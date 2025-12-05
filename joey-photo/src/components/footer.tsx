@@ -112,7 +112,7 @@ export default function Footer() {
 
             <div className="mt-6 text-sm text-[#d6cdbf] md:text-right">
               <div>© {new Date().getFullYear()} Grassy Photographie — Tous droits réservés.</div>
-              <div className="mt-1">Site conçu par SunDev — Tous droits de reproduction réservés.</div>
+              <div className="mt-1">Site conçu par <a href="https://www.facebook.com/sundevagency?locale=fr_FR" target="_blank" rel="noopener noreferrer" className="text-[#D4C09E] hover:underline">SunDev</a> — Tous droits de reproduction réservés.</div>
             </div>
           </div>
         </div>
