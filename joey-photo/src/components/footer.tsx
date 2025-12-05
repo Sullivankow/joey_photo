@@ -57,7 +57,7 @@ export default function Footer() {
                   href="/#about"
                   onClick={(e) => goToSection(e, 'about')}
                 >
-                  À propos
+                  Histoire
                 </a>
               </li>
               <li>

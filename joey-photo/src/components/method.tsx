@@ -1,8 +1,8 @@
 export default function Method() {
   const items = [
     {
-      title: 'Échange personnalisé',
-      desc: "Un rendez-vous préparatoire pour cerner vos envies, choisir le lieu et définir l'ambiance de la séance.",
+      title: 'Premier échange & découverte',
+      desc: "Nous discutons ensemble de votre projet, de vos envies et du style recherché afin de créer une séance qui vous ressemble.",
       icon: (
         <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.99 9.99 0 01-4-.8L3 20l.8-4A9.99 9.99 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -10,8 +10,8 @@ export default function Method() {
       ),
     },
     {
-      title: 'Séance guidée & conviviale',
-      desc: "Des consignes claires, une atmosphère détendue : je vous accompagne pour faire ressortir le naturel.",
+      title: 'Préparation & conseils personnalisés',
+      desc: "Je vous guide sur les tenues, les lieux, l'ambiance et les détails qui sublimeront vos photos.",
       icon: (
         <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 7v4a1 1 0 001 1h3l3 3v-3h6a1 1 0 001-1V7a4 4 0 00-4-4H7a4 4 0 00-4 4z" />
@@ -19,8 +19,8 @@ export default function Method() {
       ),
     },
     {
-      title: 'Retouches soignées',
-      desc: "Tri professionnel et post-traitement personnalisé pour un rendu fidèle et élégant.",
+      title: 'La séance photo',
+      desc: "Dans une atmosphère bienveillante, je vous accompagne pas à pas pour capturer des images naturelles, authentiques et lumineuses.",
       icon: (
         <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8c-1.657 0-3 1.567-3 3.5S10.343 15 12 15s3-1.567 3-3.5S13.657 8 12 8z" />
@@ -29,8 +29,8 @@ export default function Method() {
       ),
     },
     {
-      title: 'Galerie privée & livraison',
-      desc: "Envoi d'une galerie privée sécurisée et fichiers haute définition prêts à imprimer.",
+      title: 'Sélection & retouches professionnelles',
+      desc: "Vous recevez une galerie privée avec vos meilleures photos que je retouche avec soin pour un rendu esthétique et intemporel.",
       icon: (
         <svg className="h-6 w-6 text-[#213547]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7" />
@@ -45,7 +45,7 @@ export default function Method() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h3 id="method-heading" className="text-base font-semibold text-[#D4C09E]">Ma méthode</h3>
-          <p className="mt-2 text-3xl font-semibold text-[#213547]">Une approche humaine et professionnelle</p>
+          <p className="mt-2 text-3xl font-semibold text-[#D4C09E]">Une approche humaine et professionnelle</p>
           <p className="mt-4 text-gray-600">Des échanges préparatoires à la livraison finale, je vous accompagne à chaque étape pour un résultat qui vous ressemble.</p>
         </div>
 
