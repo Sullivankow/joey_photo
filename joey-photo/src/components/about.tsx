@@ -2,8 +2,7 @@
 
 import { useRef } from 'react'
 import useInView from '../hooks/useInView'
-import Method from './method'
-
+// Method component not used here; import removed to fix unused import error
 
 
 export default function About() {
