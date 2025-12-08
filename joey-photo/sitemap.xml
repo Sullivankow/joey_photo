@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://votre-domaine.exemple/</loc>
+    <loc>https://www.grassyphotographie.fr/</loc>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://votre-domaine.exemple/portfolio</loc>
+    <loc>https://www.grassyphotographie.fr/portfolio</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://votre-domaine.exemple/mentions-legales</loc>
+    <loc>https://www.grassyphotographie.fr/mentions-legales</loc>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://votre-domaine.exemple/confidentialites</loc>
+    <loc>https://www.grassyphotographie.fr/confidentialites</loc>
     <priority>0.50</priority>
   </url>
 </urlset>

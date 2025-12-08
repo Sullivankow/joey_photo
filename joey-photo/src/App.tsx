@@ -23,7 +23,7 @@ function Home() {
     const meta = document.querySelector('meta[name="description"]')
     if (meta) meta.setAttribute('content', 'Joey Grassy, photographe professionnel spécialisé en portraits, mariages et éditorial. Réservation de séances et portfolio.')
     const linkCanonical = document.querySelector('link[rel="canonical"]')
-    if (linkCanonical) linkCanonical.setAttribute('href', 'https://votre-domaine.exemple/')
+    if (linkCanonical) linkCanonical.setAttribute('href', 'https://www.grassyphotographie.fr/')
   }, [])
 
   return (

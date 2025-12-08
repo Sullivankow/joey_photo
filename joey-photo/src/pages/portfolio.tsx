@@ -92,7 +92,7 @@ function InnerMeta() {
       link.setAttribute('rel', 'canonical')
       document.head.appendChild(link)
     }
-    link.setAttribute('href', 'https://votre-domaine.exemple/portfolio')
+    link.setAttribute('href', 'https://www.grassyphotographie.fr/portfolio')
   }, [])
   return null
 }

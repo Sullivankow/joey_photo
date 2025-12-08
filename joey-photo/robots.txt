@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://votre-domaine.exemple/sitemap.xml
+Sitemap: https://www.grassyphotographie.fr/sitemap.xml

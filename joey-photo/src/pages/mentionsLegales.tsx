@@ -88,7 +88,7 @@ function Meta() {
       link.setAttribute('rel', 'canonical')
       document.head.appendChild(link)
     }
-    link.setAttribute('href', 'https://votre-domaine.exemple/mentions-legales')
+    link.setAttribute('href', 'https://www.grassyphotographie.fr/mentions-legales')
   }, [])
   return null
 }

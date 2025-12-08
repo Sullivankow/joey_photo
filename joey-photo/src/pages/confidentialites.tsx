@@ -77,7 +77,7 @@ function Meta() {
       link.setAttribute('rel', 'canonical')
       document.head.appendChild(link)
     }
-    link.setAttribute('href', 'https://votre-domaine.exemple/confidentialites')
+    link.setAttribute('href', 'https://www.grassyphotographie.fr/confidentialites')
   }, [])
   return null
 }
