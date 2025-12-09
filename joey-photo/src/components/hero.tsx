@@ -103,7 +103,7 @@ export default function Hero() {
                   <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
                   <path d="M8 7l1-2h6l1 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Voir le portfolio
+                Voir mon portfolio
               </Link>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white border border-white/20">
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
