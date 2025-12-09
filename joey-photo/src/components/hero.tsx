@@ -91,7 +91,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto w-full flex items-center">
           <div className="w-full lg:w-1/2 p-8 lg:p-20 text-white">
             <h1 style={{ color: '#fff' }} className="text-4xl lg:text-6xl font-bold leading-tight mb-4 text-white">Capturer la lumière et l'émotion</h1>
-            <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe1234 professionnel — portraits, mariages, éditorial.</p>
+            <p className="text-lg lg:text-xl text-white/90 mb-6">Photographe professionnel — portraits, mariages, éditorial.</p>
             <div className="flex gap-4">
               <Link
                 to="/portfolio"
