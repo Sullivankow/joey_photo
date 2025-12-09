@@ -7,8 +7,6 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
-        with:
-          path: joey-photo
 
       - name: 📂 Install dependencies
         uses: actions/setup-node@v3
@@ -16,10 +14,10 @@ jobs:
           node-version: '20'
 
       - name: 📂 Install npm dependencies
-        run: cd joey-photo && npm install
+        run: npm install
 
       - name: 🛠️ Build project
-        run: cd joey-photo && npm run build
+        run: npm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -34,6 +32,6 @@ jobs:
             **/src/**
             **/public/**
           server-dir: /www/
-          local-dir: joey-photo/dist/
+          local-dir: dist/
           protocol: ftp
           port: 21
