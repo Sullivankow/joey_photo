@@ -107,7 +107,7 @@ $smtp_host = getenv('SMTP_HOST') ?: 'ssl0.ovh.net';
 $smtp_port = getenv('SMTP_PORT') ?: 465;
 $smtp_secure = getenv('SMTP_SECURE') ?: 'ssl'; // 'ssl' or 'tls'
 $from_address = getenv('MAIL_FROM') ?: $smtp_user ?: 'no-reply@' . ($_SERVER['SERVER_NAME'] ?? 'localhost');
-$to_address = getenv('MAIL_TO') ?: $from_address; // if not set, send to from
+$to_address = 'grassyphotographie@gmail.com'; // adresse de réception forcée
 
 // helper: nettoyage des entêtes
 function sanitizeHeader($s) { return preg_replace('/(\r|\n|%0A|%0D)/i', '', $s); }
