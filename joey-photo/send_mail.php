@@ -156,14 +156,17 @@ if ($smtp_user && $smtp_pass) {
         echo json_encode(['ok' => true, 'message' => 'Message envoyé (SMTP)']);
         exit;
     } catch (PHPMailerUnavailableException $e) {
-        // PHPMailer absent : journaliser et passer au fallback mail()
         error_log('PHPMailer manquant : ' . $e->getMessage());
+        echo json_encode(['ok' => false, 'error' => 'PHPMailer non disponible : ' . $e->getMessage()]);
+        exit;
     } catch (\PHPMailer\PHPMailer\Exception $e) {
-        // erreur spécifique à PHPMailer (ex : auth SMTP) -> journaliser
         error_log('Erreur PHPMailer (SMTP) : ' . $e->getMessage());
+        echo json_encode(['ok' => false, 'error' => 'Erreur PHPMailer (SMTP) : ' . $e->getMessage()]);
+        exit;
     } catch (\Exception $e) {
-        // autre erreur inattendue
         error_log('Erreur lors de l\'envoi via PHPMailer : ' . $e->getMessage());
+        echo json_encode(['ok' => false, 'error' => 'Erreur lors de l\'envoi via PHPMailer : ' . $e->getMessage()]);
+        exit;
     }
 }
 
