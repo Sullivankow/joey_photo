@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 // send_mail.php
 // Adapté pour être utilisé avec le front-end React : accepte du JSON ou un POST form,
 // et renvoie toujours du JSON.
