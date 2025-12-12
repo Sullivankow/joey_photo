@@ -101,13 +101,15 @@ $html = '<div style="font-family:Arial,sans-serif;color:#223;">'
 // mise à jour du timestamp de limitation (rate-limit)
 @touch($rl_file);
 
-$smtp_user = getenv('SMTP_USER') ?: getenv('MAIL_USER') ?: '';
-$smtp_pass = getenv('SMTP_PASS') ?: getenv('MAIL_PASS') ?: '';
-$smtp_host = getenv('SMTP_HOST') ?: 'ssl0.ovh.net';
-$smtp_port = getenv('SMTP_PORT') ?: 465;
-$smtp_secure = getenv('SMTP_SECURE') ?: 'ssl'; // 'ssl' or 'tls'
-$from_address = getenv('MAIL_FROM') ?: $smtp_user ?: 'no-reply@' . ($_SERVER['SERVER_NAME'] ?? 'localhost');
-$to_address = 'sundly@live.fr'; // adresse de réception forcée
+
+// --- Configuration SMTP OVH ---
+$smtp_user = 'contact@grassyphotographie.fr'; // Adresse mail OVH
+$smtp_pass = 'Grassyphotographie100820'; // <-- À compléter avec le mot de passe de cette adresse
+$smtp_host = 'ssl0.ovh.net';
+$smtp_port = 465;
+$smtp_secure = 'ssl'; // 'ssl' ou 'tls'
+$from_address = $smtp_user;
+$to_address = 'grassyphotographie@gmail.com'; // adresse de réception
 
 // helper: nettoyage des entêtes
 function sanitizeHeader($s) { return preg_replace('/(\r|\n|%0A|%0D)/i', '', $s); }
